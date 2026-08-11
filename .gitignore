@@ -10,7 +10,8 @@ venv/
 .venv/
 
 # IDE
-.vscode/
+.vscode/*
+!.vscode/tasks.json
 .idea/
 
 # Logs

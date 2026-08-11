@@ -195,3 +195,31 @@ CI 从 GitHub Actions Secret `DEEPSEEK_API_KEY` 读取模型密钥，并映射�
 pytest tests/
 python -m evaluation.eval_agent
 ```
+
+## Local Auto Testing
+
+开发阶段可以使用 `pytest-watch` 获得保存即测试的快速反馈：
+
+```text
+修改 Python 代码或测试
+  ↓
+Ctrl + S 保存
+  ↓
+pytest-watch 检测文件变化
+  ↓
+自动执行 pytest tests/
+```
+
+直接运行：
+
+```powershell
+ptw --runner "python -m pytest tests/"
+```
+
+也可以使用项目提供的 PowerShell 脚本。脚本会优先使用当前已激活的虚拟环境，否则尝试查找项目或工作区已有的虚拟环境：
+
+```powershell
+.\scripts\run_watch_tests.ps1
+```
+
+在 VS Code 中可以通过 `Terminal > Run Task > Watch Agent Tests` 启动相同的监听任务。使用 `Ctrl+C` 停止监听。
