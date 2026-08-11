@@ -1,0 +1,40 @@
+# Python
+**/__pycache__/
+*.pyc
+*.py[cod]
+.pytest_cache/
+
+# Environment
+.env
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Chroma / Vector Database
+agent_memory/
+eval_agent_memory/
+test_agent_memory/
+chroma_db/
+
+# Test outputs
+evaluation_results.json
+
+# OS
+.DS_Store
+
+# Temporary files
+*.tmp
+
+# Python cache
+*.egg-info/
+
+# Coverage
+.coverage
+htmlcov/

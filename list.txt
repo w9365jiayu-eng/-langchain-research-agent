@@ -1,0 +1,96 @@
+卷 Data 的文件夹 PATH 列表
+卷序列号为 00000095 565A:1B7B
+D:.
+│  .env.example
+│  .gitignore
+│  agent.py
+│  app.py
+│  cleanup_memory.py
+│  config.py
+│  evaluator.py
+│  eval_agent.py
+│  list.txt
+│  memory.py
+│  planner.py
+│  README.md
+│  reflection.py
+│  requirements.txt
+│  security.py
+│  validation.py
+│  
+├─.pytest_cache
+│  │  .gitignore
+│  │  CACHEDIR.TAG
+│  │  README.md
+│  │  
+│  └─v
+│      └─cache
+│              lastfailed
+│              nodeids
+│              
+├─agent_memory
+│  │  chroma.sqlite3
+│  │  
+│  └─a34c63aa-458a-4f14-a8f3-906f66565456
+│          data_level0.bin
+│          header.bin
+│          length.bin
+│          link_lists.bin
+│          
+├─examples
+│      memory_chat.py
+│      planning_chat.py
+│      
+├─logs
+│      security.log
+│      
+├─tests
+│  │  test_agent.py
+│  │  test_evaluator.py
+│  │  test_integration_quality.py
+│  │  test_memory.py
+│  │  test_reflection.py
+│  │  test_security.py
+│  │  test_security_integration.py
+│  │  
+│  ├─data
+│  │      sample.pdf
+│  │      
+│  └─__pycache__
+│          test_integration_quality.cpython-311-pytest-8.4.2.pyc
+│          test_memory.cpython-311-pytest-8.4.2.pyc
+│          test_reflection.cpython-311-pytest-8.4.2.pyc
+│          test_security.cpython-311-pytest-8.4.2.pyc
+│          test_security_integration.cpython-311-pytest-8.4.2.pyc
+│          
+├─test_agent_memory
+│  │  chroma.sqlite3
+│  │  
+│  └─83671eda-4bb6-4811-af6c-81d589feda84
+│          data_level0.bin
+│          header.bin
+│          length.bin
+│          link_lists.bin
+│          
+├─tools
+│  │  pdf_parser.py
+│  │  search_tool.py
+│  │  web_scraper.py
+│  │  __init__.py
+│  │  
+│  └─__pycache__
+│          pdf_parser.cpython-311.pyc
+│          search_tool.cpython-311.pyc
+│          web_scraper.cpython-311.pyc
+│          __init__.cpython-311.pyc
+│          
+└─__pycache__
+        agent.cpython-311.pyc
+        app.cpython-311.pyc
+        config.cpython-311.pyc
+        memory.cpython-311.pyc
+        planner.cpython-311.pyc
+        reflection.cpython-311.pyc
+        security.cpython-311.pyc
+        validation.cpython-311.pyc
+        
