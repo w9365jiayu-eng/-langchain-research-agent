@@ -25,6 +25,6 @@ if (-not (Get-Command ptw -ErrorAction SilentlyContinue)) {
     Write-Error "未找到 pytest-watch。请先运行：python -m pip install -r requirements.txt"
 }
 
-Write-Host "监听项目中的 Python 文件变化，并自动执行 pytest tests/。"
+Write-Host "监听项目中的 Python 文件变化，并自动执行完整 Continuous Evaluation。"
 Write-Host "按 Ctrl+C 停止。"
-& ptw --runner "python -m pytest tests/"
+& ptw --runner "python evaluation/run_evaluation.py"

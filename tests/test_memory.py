@@ -57,7 +57,7 @@ def test_rag_question_recalls_related_rag_memory() -> None:
     assert "RAG和Fine-tuning哪个好" in result
 
 
-def test_semantic_search() -> bool:
+def test_semantic_search() :
     """验证中英文语义相近问题能够召回已保存的 RAG 记忆。"""
     print("\n=====================\nTest 1 - 语义记忆检索\n=====================")
     if os.path.exists(TEST_MEMORY_DIR):
@@ -74,10 +74,10 @@ def test_semantic_search() -> bool:
     passed = "RAG是检索增强生成技术" in result
     print("[PASS] 语义召回成功" if passed else "[FAIL] 未召回预期记忆")
     memory = None
-    return passed
+    assert passed
 
 
-def test_agent_multi_turn() -> bool:
+def test_agent_multi_turn() :
     """执行两轮真实 Agent 调用，验证第二轮能获得第一轮的向量记忆。"""
     print("\n=====================\nTest 2 - Agent多轮记忆\n=====================")
     try:

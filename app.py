@@ -1,6 +1,6 @@
 """Memory + Planning + ReAct + Reflection Agent 的唯一交互入口。"""
 
-from typing import Any
+from typing import Any 
 
 from research_agent.agent import create_research_agent
 from research_agent.reflection import ReflectionEvaluator
@@ -89,7 +89,7 @@ def _research_with_retry(
 
 
 def _reflect_and_revise(
-    reflection: ReflectionEvaluator | None,
+    reflection: ReflectionEvaluator | None, 
     question: str,
     answer: str,
 ) -> str:

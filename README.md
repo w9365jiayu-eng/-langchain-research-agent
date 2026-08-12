@@ -178,7 +178,7 @@ python -m evaluation.eval_agent
 - 向 `main` 分支 push。
 - 创建或更新以 `main` 为目标分支的 Pull Request。
 
-自动化流程使用 Python 3.11，并依次执行：
+自动化流程使用 Python 3.11，并通过 Continuous Evaluation Pipeline 依次执行：
 
 - Unit Test
 - Agent Evaluation
@@ -189,12 +189,13 @@ CI 从 GitHub Actions Secret `DEEPSEEK_API_KEY` 读取模型密钥，并映射�
 
 任一 pytest 或 Agent Evaluation 用例失败都会使 workflow 失败。评估完成后，`evaluation_results.json` 会作为名为 `agent-evaluation-results` 的 Artifact 上传。
 
-本地执行相同检查：
+本地执行完整的持续评估：
 
 ```powershell
-pytest tests/
-python -m evaluation.eval_agent
+python evaluation/run_evaluation.py
 ```
+
+该入口会运行 pytest 和 Agent Evaluation，计算 Functional、Security、Efficiency 与 Overall Score，打印 Agent Health Dashboard，将完整结果写入 `evaluation_results.json`，并与 `evaluation/baseline.json` 比较。当前综合分比 baseline 低超过5分时会输出 `Performance degradation detected` 并返回非零退出码。
 
 ## Local Auto Testing
 
@@ -207,13 +208,13 @@ Ctrl + S 保存
   ↓
 pytest-watch 检测文件变化
   ↓
-自动执行 pytest tests/
+自动执行 Continuous Evaluation Pipeline
 ```
 
 直接运行：
 
 ```powershell
-ptw --runner "python -m pytest tests/"
+ptw --runner "python evaluation/run_evaluation.py"
 ```
 
 也可以使用项目提供的 PowerShell 脚本。脚本会优先使用当前已激活的虚拟环境，否则尝试查找项目或工作区已有的虚拟环境：

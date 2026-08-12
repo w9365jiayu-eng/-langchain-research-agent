@@ -20,7 +20,7 @@ else:
 
 MAX_MEMORY_CHARS_PER_ITEM = 2000
 MAX_MEMORY_CONTEXT_CHARS = 4000
-MEMORY_DISTANCE_THRESHOLD = 0.35
+MEMORY_DISTANCE_THRESHOLD = 0.60
 
 
 class VectorMemory:
@@ -111,6 +111,10 @@ class VectorMemory:
             candidate_metadatas = nested_metadatas[0] if nested_metadatas else []
             nested_distances = result.get("distances") or []
             candidate_distances = nested_distances[0] if nested_distances else []
+
+            print(f"[DEBUG] query={query}")
+            print(f"[DEBUG] distances={candidate_distances}")
+
             latest_by_question: dict[str, tuple[str, int, str, float]] = {}
             for index, document in enumerate(candidates):
                 if not document or contains_failure_marker(document):
